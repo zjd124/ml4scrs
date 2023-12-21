@@ -1,0 +1,17 @@
+Package: ml4scrs
+Title: Self implement for some Machine learning methods
+Version: 0.0.0.9000
+Authors@R: c(person("Jingdan", "Zou", , "jz5898@nyu.edu", role = c("aut", "cre")), 
+             person("Qihan", "Chen", , "qc950@nyu.edu", role = c("aut")))
+Description: This is a R implementation for some Machine learning algorithms, including Lasso, Ridge, Navie Bayesian, Kmeans, KNN.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    magrittr,
+    Matrix,
+    purrr,
+    stats,
+    tibble
