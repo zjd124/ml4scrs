@@ -20,6 +20,6 @@ a table of k and correspond mean accuracy
 Cross-validation for KNN
 }
 \examples{
-iris_cv <- knn0_cv(iris, k_values = c(3,5,7,9), num_folds = 5)
+iris_cv <- knn0_cv(iris[1:50,], k_values = c(3,5,7,9), num_folds = 5)
 iris_cv
 }

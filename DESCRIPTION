@@ -13,5 +13,4 @@ Imports:
     magrittr,
     Matrix,
     purrr,
-    stats,
     tibble

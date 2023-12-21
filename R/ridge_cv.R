@@ -4,6 +4,7 @@
 #' @param y response variable as in ridge_fit
 #' @param lambda user-supplied lambda sequence for hyper-parameter tuning
 #' @param nfolds number of folds - default is 10. Smallest value allowable is 3
+#' @importFrom stats var
 #' @return a object containing call, lambda, beta, best beta, and min mse
 #' @export ridge_cv
 #' @examples
@@ -36,7 +37,7 @@ ridge_cv <- function(x, y, lambda = NULL, nfolds = 10) {
       y_val <- y[k == j]
 
       # Check for zero variance in true values
-      if (stats::var(y_train) == 0) {
+      if (var(y_train) == 0) {
         mse_fold[j] <- 0  # Set MSE to zero in this case
       } else {
 

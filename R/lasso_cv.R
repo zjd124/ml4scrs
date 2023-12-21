@@ -4,12 +4,13 @@
 #' @param y response variable as in lasso_fit
 #' @param lambda user-supplied lambda sequence for hyper-parameter tuning
 #' @param nfolds number of folds - default is 10. Smallest value allowable is 3
+#' @importFrom stats var
 #' @return a object containing call, lambda, beta, best beta, and min mse
 #' @export lasso_cv
 #' @examples
 #' x = matrix(rnorm(100 * 20), 100, 20)
 #' y = x[,1] + 2*x[,5]+ 6*x[,10] +rnorm(100)
-#' lambda_values <- seq(0.1, 0.4, by = 0.1)#set up lambda values for cross-validation
+#' lambda_values <- seq(0.1, 0.5, by = 0.1)
 #' fit <- lasso_cv(x, y, lambda = lambda_values, nfolds = 10)
 #' fit$lambda.best
 lasso_cv <- function(x, y, lambda = NULL, nfolds = 10) {
@@ -36,7 +37,7 @@ lasso_cv <- function(x, y, lambda = NULL, nfolds = 10) {
       y_val <- y[k == j]
 
       # Check for zero variance in true values
-      if (stats::var(y_train) == 0) {
+      if (var(y_train) == 0) {
         mse_fold[j] <- 0  # Set MSE to zero in this case
       } else {
 

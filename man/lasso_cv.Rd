@@ -24,7 +24,7 @@ Cross-validation for lasso_fit
 \examples{
 x = matrix(rnorm(100 * 20), 100, 20)
 y = x[,1] + 2*x[,5]+ 6*x[,10] +rnorm(100)
-lambda_values <- seq(0.1, 0.4, by = 0.1)#set up lambda values for cross-validation
+lambda_values <- seq(0.1, 0.5, by = 0.1)
 fit <- lasso_cv(x, y, lambda = lambda_values, nfolds = 10)
 fit$lambda.best
 }
